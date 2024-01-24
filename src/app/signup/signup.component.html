@@ -1,0 +1,21 @@
+<div class="signup-container">
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="model.name" name="name" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="model.email" name="email" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [(ngModel)]="model.password" type="password" name="password" required>
+      </mat-form-field>
+  
+      <button mat-raised-button color="accent" type="submit">Sign Up</button>
+    </form>
+  </div>
+  
