@@ -11,7 +11,7 @@ export class SignupComponent {
 
   constructor(private authService: AuthService) { }
 
-  onSubmit() {
+  onSignin() {
     this.authService.signup(this.model.name, this.model.email, this.model.password).subscribe(
       data => {
         console.log('Signup successful');

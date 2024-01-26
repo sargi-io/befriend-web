@@ -1,21 +1,31 @@
-<div class="signup-container">
-    <form (ngSubmit)="onSubmit()">
-      <mat-form-field appearance="fill">
-        <mat-label>Name</mat-label>
-        <input matInput [(ngModel)]="model.name" name="name" required>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput [(ngModel)]="model.email" name="email" required>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput [(ngModel)]="model.password" type="password" name="password" required>
-      </mat-form-field>
-  
-      <button mat-raised-button color="accent" type="submit">Sign Up</button>
-    </form>
-  </div>
-  
+<div class="container">
+  <mat-card>
+    <mat-card-title>Register</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="onSignin()">
+        
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Enter your username" [(ngModel)]="model.name" name="name">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter your email" [(ngModel)]="model.email" name="email">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Enter your password" [(ngModel)]="model.password" name="password">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Confirm Password</mat-label>
+          <input matInput type="password" placeholder="Confirm your password" [(ngModel)]="model.confirmPassword" name="confirmPassword">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Register</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
