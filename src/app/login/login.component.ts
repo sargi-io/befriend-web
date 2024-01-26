@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,17 +10,20 @@ import { AuthService } from '../auth.service';
 export class LoginComponent {
   model: any = {};
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   onSubmit() {
-    this.authService.login(this.model.username, this.model.password).subscribe(
-      data => {
+    this.authService.login(this.model.name, this.model.password).subscribe(
+      (response) => {
         console.log('Login successful');
-        // Handle successful login, redirect or store JWT if you're using it
+        const jwtToken = response.token;
+        console.log(jwtToken)
+        this.authService.setAuthToken(jwtToken);
+        this.router.navigate(['']);
       },
       error => {
         console.error('Login failed');
-        // Handle login failure
+        
       }
     );
   }
